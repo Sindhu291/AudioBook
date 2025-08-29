@@ -1,0 +1,18 @@
+import os
+
+def set_background(image_name):
+    # Get the absolute path to the directory of app.py
+    base_path = os.path.dirname(os.path.abspath(__file__))
+    
+    # Build path to assets folder
+    image_path = os.path.join(base_path, "assets", image_name)
+    
+    # Open the file safely
+    with open(image_path, "rb") as f:
+        image_data = f.read()
+    
+    return image_data
+
+
+# Usage
+background = set_background("background.jpg")
